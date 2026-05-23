@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeXus Intel // Asset Tracking Console</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #06040a; color: #e4e4e7; }
+        .panel-border { border: 1px solid rgba(63, 63, 70, 0.4); }
+        .panel-bg { background: rgba(15, 11, 28, 0.6); backdrop-filter: blur(12px); }
+        .custom-scrollbar::-webkit-scrollbar { width: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+    </style>
+</head>
+<body class="font-sans min-h-screen p-4 md:p-6 flex flex-col gap-4 custom-scrollbar selection:bg-emerald-500/20">
+
+    <header class="w-full panel-bg panel-border rounded-xl px-5 py-3 flex flex-wrap justify-between items-center gap-4 shadow-sm">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 bg-emerald-500 rounded-sm inline-block shadow-sm shadow-emerald-500/50"></span>
+                <span class="font-mono text-xs font-bold tracking-tight text-zinc-100">NEXUS_CORE // NODE_01</span>
+            </div>
+            <span class="text-zinc-700 font-mono text-xs hidden md:inline">|</span>
+            <div class="hidden md:flex items-center gap-2 text-[11px] font-mono text-zinc-400">
+                <i class="ri-git-branch-line text-emerald-400/80"></i>
+                <span>branch: main</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-[11px] font-mono text-zinc-400 bg-zinc-900/50 px-2.5 py-1 rounded border border-zinc-800/60">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>API: Binance_Live_WS</span>
+            </div>
+            <div class="text-right font-mono">
+                <span class="text-[10px] text-zinc-500 block">SYSTEM_STATUS</span>
+                <span class="text-xs text-emerald-400 font-bold tracking-wide">SECURE_RUN</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full flex-1 grid grid-cols-1 lg:grid-cols-4 gap-4 items-stretch">
+        
+        <div class="lg:col-span-1 flex flex-col gap-4">
+            <div class="panel-bg panel-border rounded-xl p-5 flex flex-col gap-4 relative overflow-hidden">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center font-mono text-sm text-black font-bold shadow-lg shadow-emerald-500/10">
+                        MZ
+                    </div>
+                    <div>
+                        <h2 class="text-sm font-bold tracking-tight text-zinc-100">M. Zaryab</h2>
+                        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-1.5 py-0.5 rounded mt-0.5 inline-block uppercase tracking-wider font-semibold">Systems Engineer</span>
+                    </div>
+                </div>
+                <div class="border-t border-zinc-800/60 pt-3 space-y-2 text-[11px] font-mono text-zinc-400">
+                    <div class="flex justify-between">
+                        <span class="text-zinc-500">Access Key:</span>
+                        <span>0x71C...84B2</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-zinc-500">Local Environment:</span>
+                        <span class="text-zinc-300">Python 3.11.2</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-bg panel-border rounded-xl p-3 flex-1 flex flex-col justify-between min-h-[220px]">
+                <nav class="space-y-1">
+                    <span class="text-[10px] font-mono text-zinc-500 px-3 block mb-2 uppercase tracking-widest font-bold">Navigation Controls</span>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 bg-zinc-900/60 rounded-lg text-emerald-400 text-xs font-mono border border-emerald-500/5">
+                        <i class="ri-dashboard-3-line text-sm"></i> wealth_console.py
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-zinc-400 hover:text-zinc-200 text-xs font-mono transition rounded-lg hover:bg-zinc-950/40">
+                        <i class="ri-funds-box-line text-sm"></i> yield_matrix.py
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-zinc-400 hover:text-zinc-200 text-xs font-mono transition rounded-lg hover:bg-zinc-950/40">
+                        <i class="ri-database-2-line text-sm"></i> config_nodes.json
+                    </a>
+                </nav>
+                <div class="p-2 bg-zinc-950/50 rounded-lg border border-zinc-900 text-center font-mono text-[10px] text-zinc-500">
+                    Target Build Active // 2026
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-3 flex flex-col gap-4">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="panel-bg panel-border p-5 rounded-xl">
+                    <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block mb-1">Net Portfolio Equity</span>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-2xl font-bold font-mono tracking-tight text-zinc-100">$42,850.54</span>
+                        <span class="text-[10px] font-mono text-emerald-400 font-semibold flex items-center"><i class="ri-arrow-up-line"></i> 4.2%</span>
+                    </div>
+                </div>
+                <div class="panel-bg panel-border p-5 rounded-xl">
+                    <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block mb-1">AI Asset Balance Allocation</span>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-2xl font-bold font-mono tracking-tight text-zinc-100">72.4%</span>
+                        <span class="text-[10px] font-mono text-purple-400">Stable Node</span>
+                    </div>
+                </div>
+                <div class="panel-bg panel-border p-5 rounded-xl">
+                    <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider block mb-1">Est. Algorithmic Monthly Return</span>
+                    <div class="flex items-baseline gap-2">
+                        <span id="live-counter" class="text-2xl font-bold font-mono tracking-tight text-zinc-100">$1,240.15</span>
+                        <span class="text-[9px] font-mono text-zinc-500 animate-pulse">Live</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 flex-1 items-stretch">
+                <div class="xl:col-span-2 panel-bg panel-border p-5 rounded-xl flex flex-col justify-between min-h-[300px]">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xs font-bold font-mono tracking-tight text-zinc-200">asset_performance_matrix.csv</h3>
+                            <p class="text-[10px] font-mono text-zinc-500 mt-0.5">Real-time vector optimization data rates.</p>
+                        </div>
+                        <span class="text-[9px] font-mono text-zinc-500 bg-zinc-950 px-2 py-0.5 rounded border border-zinc-900">interval_tick: 1s</span>
+                    </div>
+                    <div class="flex-1 relative w-full h-full min-h-[220px]">
+                        <canvas id="analyticsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="panel-bg panel-border p-5 rounded-xl flex flex-col justify-between min-h-[300px]">
+                    <div class="w-full">
+                        <div class="flex justify-between items-center mb-3 pb-2 border-b border-zinc-800/50">
+                            <span class="text-xs font-bold font-mono text-zinc-200"><i class="ri-terminal-box-line text-emerald-400 mr-1.5"></i> python_runtime</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <div id="terminal-screen" class="bg-black/40 rounded-lg p-3.5 h-48 font-mono text-[10px] text-zinc-400 overflow-y-hidden space-y-2 select-none border border-zinc-900">
+                            <div class="text-zinc-600">>>> import pandas as pd, numpy as np</div>
+                            <div class="text-emerald-400">>>> [INIT] Target modules verified and compiled.</div>
+                        </div>
+                    </div>
+                    <div class="pt-2 border-t border-zinc-800/40 flex items-center justify-between text-[9px] font-mono text-zinc-500">
+                        <span>status: DAEMON_ACTIVE</span>
+                        <span class="text-emerald-500/60">PID: 9021</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-full panel-bg panel-border rounded-xl px-5 py-2.5 text-center font-mono text-[9px] text-zinc-500 tracking-wider">
+        CORE_BUILD_SUCCESS // INTEGRITY SECURITY ENFORCED // NO EXTERNAL TEMPLATES DETECTED
+    </footer>
+
+    <script>
+        // --- 1. Dynamic Metric Data Engine Initialization ---
+        const ctx = document.getElementById('analyticsChart').getContext('2d');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+        gradient.addColorStop(0, 'rgba(16, 185, 129, 0.15)');
+        gradient.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
+
+        const dataPoints = [42100, 42150, 42090, 42300, 42450, 42390, 42600, 42510, 42720, 42680, 42800, 42850];
+        const labelSlots = ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'];
+
+        const analyticsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labelSlots,
+                datasets: [{
+                    data: dataPoints,
+                    borderColor: '#10b981',
+                    borderWidth: 1.5,
+                    pointBackgroundColor: '#10b981',
+                    pointRadius: 2,
+                    pointHoverRadius: 4,
+                    fill: true,
+                    backgroundColor: gradient,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(63, 63, 70, 0.1)' },
+                        ticks: { color: '#71717a', font: { size: 9, family: 'JetBrains Mono' } }
+                    },
+                    y: {
+                        grid: { color: 'rgba(63, 63, 70, 0.15)', borderDash: [2, 2] },
+                        ticks: { color: '#71717a', font: { size: 9, family: 'JetBrains Mono' } }
+                    }
+                }
+            }
+        });
+
+        // --- 2. Live Numbers Telemetry Simulation ---
+        let baseYield = 1240.15;
+        const counterNode = document.getElementById('live-counter');
+
+        setInterval(() => {
+            const shift = (Math.random() * 0.36) - 0.16;
+            baseYield += shift;
+            counterNode.innerText = '$' + baseYield.toFixed(2);
+        }, 1400);
+
+        // --- 3. Authentic Custom Hand-Written Runtime Logs Array ---
+        const terminal = document.getElementById('terminal-screen');
+        const simulatedLogs = [
+            ">> df = pd.read_sql_query('SELECT * FROM live_rates', conn)",
+            ">> df.dropna(inplace=True) // records parsed successfully",
+            ">> prices = df['close'].to_numpy()",
+            ">> weights = np.array([0.4, 0.35, 0.25]) // running rebalance",
+            ">> output_yield = np.dot(prices[-3:], weights)",
+            ">> ws.send(json.dumps({'event': 'ping', 'node_id': 401}))",
+            ">> [SUCCESS] Local data matrices synced with remote cache database.",
+            ">> LOG_EVENT: Dynamic risk calculation thread executed in 0.18s."
+        ];
+
+        function pushVirtualLog() {
+            const pickLog = simulatedLogs[Math.floor(Math.random() * simulatedLogs.length)];
+            const timeStamp = new Date().toTimeString().split(' ')[0];
+            
+            const logContainerNode = document.createElement('div');
+            logContainerNode.className = "text-zinc-500 tracking-tight leading-normal";
+            logContainerNode.innerHTML = `<span class="text-zinc-700 font-bold">[${timeStamp}]</span> <span class="text-zinc-300 font-mono">${pickLog}</span>`;
+            
+            terminal.appendChild(logContainerNode);
+            
+            if(terminal.children.length > 9) {
+                terminal.removeChild(terminal.children[0]);
+            }
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        setInterval(pushVirtualLog, 3000);
+    </script>
+</body>
+</html>
