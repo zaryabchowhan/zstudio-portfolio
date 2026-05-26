@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Zaryab Chowhan | Senior Product Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800;900&display=swap');
+        
+        :root { --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.08); }
+        body { font-family: 'Inter', sans-serif; background: #020202; color: #fff; overflow-x: hidden; }
+        
+        .scene { perspective: 2000px; width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1; }
+        .floating-orb { 
+            position: absolute; border-radius: 50%; filter: blur(80px);
+            animation: float 25s infinite ease-in-out; 
+        }
+        @keyframes float { 
+            0%, 100% { transform: translateY(0) scale(1); } 
+            50% { transform: translateY(-100px) scale(1.2); } 
+        }
+        
+        .glass-card { background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--border); transition: all 0.5s ease; }
+        .glass-card:hover { border-color: #3b82f6; transform: translateY(-10px); }
+        
+        .text-clip { background: linear-gradient(to right, #fff, #666); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .section-padding { padding-top: 120px; padding-bottom: 120px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="scene">
+        <div class="floating-orb top-[10%] right-[10%] w-[500px] h-[500px] bg-blue-900/20"></div>
+        <div class="floating-orb bottom-[10%] left-[5%] w-[600px] h-[600px] bg-purple-900/20"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 p-8 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+        <div class="text-2xl font-black italic tracking-tighter">MZ<span class="text-blue-500">.</span></div>
+        <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
+            <a href="#work" class="hover:text-white transition">Portfolio</a>
+            <a href="#expertise" class="hover:text-white transition">Expertise</a>
+            <a href="mailto:muhammadzaryabchowhan@gmail.com" class="hover:text-white transition">Contact</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center px-8 md:px-20 section-padding">
+        <div class="max-w-7xl mx-auto">
+            <span class="inline-block py-1 px-3 border border-blue-500/30 text-blue-400 text-[10px] uppercase tracking-[0.2em] mb-8">Available for Global Impact</span>
+            <h1 class="text-[clamp(4rem,15vw,16rem)] font-black leading-[0.85] tracking-tighter text-clip mb-12">
+                PRODUCT <br> ARCHITECT.
+            </h1>
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-12">
+                <p class="text-2xl text-zinc-400 max-w-xl font-light">
+                    Muhammad Zaryab Chowhan. Bridging the gap between high-concurrency engineering and human-centric design.
+                </p>
+                <div class="flex gap-6">
+                    <a href="cv.pdf" download class="px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-blue-600 hover:text-white transition duration-500 transform hover:scale-105">Download Official CV</a>
+                    <a href="https://www.linkedin.com/in/muhammad-zaryab-chowhan-167608378" target="_blank" class="px-10 py-5 glass-card rounded-full font-bold">LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="px-8 md:px-20 section-padding">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-xs uppercase tracking-[0.5em] text-zinc-500 mb-20">Selected Case Studies</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass-card p-12 rounded-[3rem]">
+                    <span class="text-blue-500 font-bold mb-4 block">01 / Enterprise UX</span>
+                    <h3 class="text-5xl font-bold mb-8">NeXus Wealth Console</h3>
+                    <p class="text-zinc-400 mb-10 leading-relaxed">Built from scratch using complex rendering logic. Solved UI latency and optimized data visualization for real-time financial tracking.</p>
+                    <a href="https://zaryabchowhan.github.io/nexus-wealth-console-v2/" target="_blank" class="inline-flex items-center gap-2 border-b border-white pb-2 hover:border-blue-500 transition">View Project <span class="text-blue-500">→</span></a>
+                </div>
+                <div class="glass-card p-12 rounded-[3rem]">
+                    <span class="text-purple-500 font-bold mb-4 block">02 / Design Systems</span>
+                    <h3 class="text-5xl font-bold mb-8">Digital Ecosystems</h3>
+                    <p class="text-zinc-400 mb-10 leading-relaxed">Architecting scalable, modular design foundations. Focusing on accessibility, component lifecycle, and developer handover speed.</p>
+                    <button class="inline-flex items-center gap-2 border-b border-white pb-2 opacity-50 cursor-not-allowed">Coming Soon</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="px-8 md:px-20 section-padding">
+        <div class="max-w-7xl mx-auto glass-card p-20 rounded-[3rem]">
+            <h2 class="text-sm uppercase tracking-[0.3em] text-zinc-500 mb-16">Core Competencies</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-16">
+                <div><h4 class="text-white font-bold mb-4 text-xl">Design</h4><p class="text-zinc-500 text-sm">UI/UX Strategy, Prototyping, Design Systems, Figma.</p></div>
+                <div><h4 class="text-white font-bold mb-4 text-xl">Development</h4><p class="text-zinc-500 text-sm">React, Tailwind CSS, TypeScript, Front-End Logic.</p></div>
+                <div><h4 class="text-white font-bold mb-4 text-xl">Performance</h4><p class="text-zinc-500 text-sm">Rendering Optimization, Load Speed, High-Concurrency.</p></div>
+                <div><h4 class="text-white font-bold mb-4 text-xl">Architecture</h4><p class="text-zinc-500 text-sm">Scalable UI Architectures, Cross-Device Consistency.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="px-20 py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-zinc-600 text-xs">© 2026 Muhammad Zaryab Chowhan. All rights reserved.</div>
+            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="https://www.linkedin.com/in/muhammad-zaryab-chowhan-167608378" class="hover:text-blue-500 transition">LinkedIn</a>
+                <a href="mailto:muhammadzaryabchowhan@gmail.com" class="hover:text-blue-500 transition">Email</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
